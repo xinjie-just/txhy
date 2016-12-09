@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>banner scroll</title>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<style>*{padding:0;margin:0;border:none}
+.bannerScroll{width:810px;height:480px;position:relative;overflow:hidden}.bannerBtn{display:none}.bannerBtn a{background-color:#000;display:block;height:40px;line-height:40px;opacity:0.3;overflow:hidden;position:absolute;top:120px;width:40px;z-index:4}.bannerImg{font-size:0;letter-spacing:-3px;position:relative}.bannerImg li{display:inline-block;font-size:12px;letter-spacing:normal;vertical-align:top;word-spacing:normal}.bannerScroll i{background:url('http://img04.taobaocdn.com/imgextra/i4/74126668/TB2HEH6XVXXXXXUXXXXXXXXXXXX_!!74126668.png') no-repeat scroll 0 0 rgba(0,0,0,0);cursor:pointer;display:block;height:23px;margin:8px 0 0 12px;width:15px}.bannerScroll .nextBtn{right:5px}.bannerScroll .nextBtn i{background-position:0 -24px}.bannerScroll .prevBtn{left:5px}.bannerScroll .prevBtn i{background-position:0 0}.bannerCircle{background:none repeat scroll 0 0 rgba(255,255,255,0.3);border-radius:10px;bottom:15px;font-size:0;height:13px;left:50%;position:absolute;text-align:center}.bannerCircle li{border-radius:10px;display:-moz-inline-stack;float:left;margin:2px;vertical-align:middle}.bannerCircle li a{background:none repeat scroll 0 0 #b7b7b7;border-radius:50%;display:block;height:0;overflow:hidden;padding-top:9px;width:9px}.bannerCircle .selected a{background:none repeat scroll 0 0 #f40}</style>
+</head>
+<body>
+<div class="bannerScroll">
+  <div class="bannerBtn">
+  	<a href="javascript:;" class="prevBtn"><i></i></a>
+  	<a href="javascript:;" class="nextBtn"><i></i></a>
+  </div>
+  <ul class="bannerImg">
+    <li><a href="http://my.oschina.net/cart/"><img src="http://gtms01.alicdn.com/tps/i1/TB1wsk4FFXXXXc6aXXXgalVIXXX-810-480.jpg"></a></li>
+    <li><a href="http://my.oschina.net/cart/"><img src="http://gtms03.alicdn.com/tps/i3/TB1DdwUFFXXXXaqbXXXgalVIXXX-810-480.jpg"></a></li>
+    <li><a href="http://my.oschina.net/cart/"><img src="http://gtms04.alicdn.com/tps/i4/TB1l0JwFVXXXXXQXpXXgalVIXXX-810-480.jpg"></a></li>
+    <li><a href="http://my.oschina.net/cart/"><img src="http://gtms04.alicdn.com/tps/i4/TB1aGBbFVXXXXbbXVXXgalVIXXX-810-480.jpg"></a></li>
+    <li><a href="http://my.oschina.net/cart/"><img src="http://gtms04.alicdn.com/tps/i4/TB1aGBbFVXXXXbbXVXXgalVIXXX-810-480.jpg"></a></li>
+    <li><a href="http://my.oschina.net/cart/"><img src="http://gtms04.alicdn.com/tps/i4/TB1aGBbFVXXXXbbXVXXgalVIXXX-810-480.jpg"></a></li>
+  </ul>
+  <ul class="bannerCircle">
+  </ul>
+</div>
+<script type="text/javascript">
+  var page = 1;
+  var timer = null;
+  var bannerScroll = $('.bannerScroll');
+  var bannerImg = bannerScroll.find('.bannerImg');
+  var bannerBtn = bannerScroll.find('.bannerBtn');
+  var bannerCircle = bannerScroll.find('.bannerCircle');
+  var width = bannerScroll.width();
+  var pageCount = bannerImg.find('li').length;
+  var bannerCircleHtml = "<li class='selected' href='javascript:;'><a></a></li>";
+  for (var i = 1; i < pageCount; i++) {
+    bannerCircleHtml += "<li><a href='javascript:;'></a></li>"
+  }
+  bannerCircle.append(bannerCircleHtml);
+  bannerCircle.css({
+    'marginLeft': bannerCircle.width() * ( - 0.5)
+  });
+  bannerImg.width(pageCount * width);
+  bannerScroll.mouseover(function() {
+    bannerBtn.css({
+      'display': 'block'
+    });
+    clearInterval(timer)
+  }).mouseout(function() {
+    bannerBtn.css({
+      'display': 'none'
+    });
+    clearInterval(timer);
+    timer = setInterval(move, 3000)
+  }).trigger("mouseout");
+  bannerBtn.find('a').mouseover(function() {
+    $(this).animate({
+      opacity: 0.6
+    },
+    'fast');
+    bannerBtn.css({
+      'display': 'block'
+    });
+    return false
+  }).mouseleave(function() {
+    $(this).animate({
+      opacity: 0.3
+    },
+    'fast');
+    bannerBtn.css({
+      'display': 'none'
+    });
+    return false
+  }).click(function() {
+    clearInterval(timer);
+    timer = setInterval(move, 3000);
+    move(this.className)
+  });
+  bannerCircle.find('li').bind('click',
+  function() {
+    var index = bannerCircle.find('li').index(this);
+    bannerImg.animate({
+      left: -width * index
+    },
+    'slow');
+    page = index + 1;
+    cirMove()
+  });
+  function move(className) {
+    if (!bannerImg.is(':animated')) {
+      if (className == 'prevBtn') {
+        if (page == 1) {
+          bannerImg.animate({
+            left: -width * (pageCount - 1)
+          });
+          page = pageCount;
+          cirMove()
+        } else {
+          bannerImg.animate({
+            left: '+=' + width
+          },
+          "slow");
+          page--;
+          cirMove()
+        }
+      } else {
+        if (page == pageCount) {
+          bannerImg.animate({
+            left: 0
+          });
+          page = 1;
+          cirMove()
+        } else {
+          bannerImg.animate({
+            left: '-=' + width
+          },
+          "slow");
+          page++;
+          cirMove()
+        }
+      }
+    }
+  }
+  function cirMove() {
+    bannerCircle.find('li').eq(page - 1).addClass('selected').siblings().removeClass('selected')
+  }
+</script>
+</body>
+</html>

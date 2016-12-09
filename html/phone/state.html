@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+	    <title>组织认证状态_同乡好运</title>
+		<meta name="keywords" content="组织认证状态">
+		<meta name="description" content="组织认证状态">
+		<meta name="author" content="lixinjie">
+		<style>
+			body { margin: 0; }
+			*, *:before, *:after { -moz-box-sizing: border-box; box-sizing: border-box; }
+			body { background: #fff; color: #333; font-family: "Microsoft Yahei", arial, ans-serif; }
+			@media (max-width: 767px) { html { font-size: 15px; } .state, .logo { width: 100%; } }
+			@media (min-width: 768px) and (max-width: 991px) { html { font-size: 16px; } .state, .logo { width: 750px; }  }
+			@media (min-width: 992px) and (max-width: 1199px) { html { font-size: 17px; } .state, .logo { width: 970px; } }
+			@media (min-width: 1200px) { html { font-size: 18px; } .state, .logo { width: 1170px; } }
+						
+			.state-bg { width: 100%; padding-top: 4rem; padding-bottom: 4rem; background-color: #f6f6f6; }
+			.top-bg { width: 100%; padding-top: .9rem; padding-bottom: .9rem; background-color: #fe5454; }
+			.logo { margin-left: auto; margin-right: auto; }
+			.logo img { display: block; max-width: 100%; height: auto; margin-left: 1rem; }
+			.state { margin-left: auto; margin-right: auto; padding-top: 2rem; padding-bottom: 2rem; background-color: #fff; font-size: 2rem; }
+			.state > div { width: 80%; margin: 2rem auto; }
+
+			.success:before, .success:after, .fail:before, .fail:after { content: ""; display: table; }
+			.success:after, .fail:after { clear: both; }
+
+			.success-flag { float: left; position: relative; height: 1rem; width: .2rem; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); background-color: #76bd27; }
+			.success-flag:after { content: ""; position: absolute; top: -.1rem; left: 1rem; height: 2rem; width: .2rem; background-color: #76bd27; -webkit-transform: rotate(90deg); transform: rotate(90deg); background-color: #76bd27; }
+			.success-info { float: left; margin-left: 2rem; }
+
+			.fail-flag { float: left; position: relative; height: 2rem; width: .2rem; -webkit-transform: rotate(-30deg); transform: rotate(-45deg); background-color: #fe5454;  }			
+			.fail-flag:after { content: ""; position: absolute; top: 0; left: 0; height: 2rem; width: .2rem;-webkit-transform: rotate(90deg); transform: rotate(90deg); background-color: #fe5454; }
+			.fail-info { float: left; margin-left: 2rem; }
+			
+			.state > div.download { width: 20rem; margin-left: auto; margin-right: auto; position: relative; }
+			.download-app { display: block; height: 3.5rem; line-height: 3.5rem; width: 20rem; text-align: center; margin: 3rem auto 2rem; font-size: 2rem; background-color: #fe5454; color: #fff; text-decoration: none; }
+			
+			#resource { display: none; position: absolute; right: 0; bottom: 3.5rem; padding: .3rem; background-color: rgba(200, 200, 200, .85); width: 20rem; font-size: 1.3rem; }
+			#resource ul { width: 100%; padding-left: 0; }
+			#resource li { list-style-type: none; float: none;	width: 100%; }
+			#resource li a { display: block; line-height: 2rem;	text-align: center;	border-radius: .3rem; background-color: rgba(255, 255, 255, .85); margin-top: .5rem; margin-bottom: .5rem; padding-top: .5rem; padding-bottom: .5rem; text-decoration: none; color: #333; }
+			#resource p { line-height: 2rem; padding-top: .5rem; padding-bottom: .5rem; }
+		</style>	  
+	</head>
+	<body>
+	    <div class="top-bg">
+			<div class="logo">
+				<img src="image/logo.png" alt="同乡好运logo">
+			</div>
+		</div>
+		<div class="state-bg">
+			<div class="state">
+				<div class="success">
+					<div class="success-flag"></div>
+					<div class="success-info">这是成功的提示</div>
+				</div>
+				<div class="fail">
+					<div class="fail-flag"></div>
+					<div class="fail-info">这是失败的提示</div>
+				</div>
+				<div class="download" id="download">
+					<a href="javascript:void(0)" title="下载同乡好运APP"  class="download-app" id="downloadApp">下载同乡好运APP</a>
+					<ul id="resource">
+		              <li><a href="#" title="android"><i class="iconfont icon-android"></i>android</a></li>
+		              <li><a href="#" title="iphone"><i class="iconfont icon-iphone"></i>iphone</a></li>
+		            </ul>
+				</div>				
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			// 下载APP时提供选择APP下载途径
+			$("#downloadApp").click(function() {
+				$("#resource").slideToggle("slow");
+			});
+		</script>
+	</body>
+</html>

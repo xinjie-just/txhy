@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>个人中心-修改资料 | 同乡好运</title>
+    <meta name="keywords" content="个人中心-修改资料" />
+    <meta name="description" content="个人中心-修改资料" />
+    <meta name="author" content="lixinjie" />
+    <link href="../../style/style-pc.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="../../jscript/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--顶部-->
+    <div class="header-bg">
+        <header class="header clear" role="banner">
+            <figure class="logo fl">
+                <a href="#" title="回到同乡好运首页">
+                    <img src="../../image/pc/logo.png" alt="同乡好运logo" />
+                </a>
+            </figure>
+            <form action="#" name="#" method="post" class="address fl">
+                <select>
+                    <option value="北京">北京</option>
+                    <option value="上海">上海</option>
+                    <option value="天津">天津</option>
+                    <option value="重庆">重庆</option>
+                    <option value="南京">南京</option>
+                    <option value="杭州">杭州</option>
+                    <option value="成都">成都</option>
+                    <option value="武汉">武汉</option>
+                </select>
+            </form>
+            <nav role="navigation" class="nav fl">
+                <ul class="nav-list clear">
+                    <li>
+                        <a href="#" title="首页">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" title="故乡">故乡</a>
+                    </li>
+                    <li>
+                        <a href="#" title="婚恋交友">婚恋交友</a>
+                    </li>
+                    <li>
+                        <a href="#" title="线下活动">线下活动</a>
+                    </li>
+                    <li>
+                        <a href="#" title="附近朋友">附近朋友</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="signout fr clear">
+                <a href="#" title="去个人中心主页" class="avatar fl">
+                    <img src="../../image/pc/login-head.jpg" alt="我的头像"></a>
+                <div class="info fl">
+                    <div class="show">
+                        <span class="nickname fl">昵称昵称</span>
+                        <span class="triangular"></span>
+                    </div>
+                    <ul class="operate">
+                        <li>
+                            <a href="#" title="退出" class="exit"> <i class="iconfont-pc icon-pc-exit"></i>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <main class="i-info-main" role="main">
+        <nav class="breadcrumbs">
+            <ol>
+                <li>
+                    <a href="index" title="首页">首页</a>
+                </li>
+                <li>
+                    <a href="index" title="我的资料">我的资料</a>
+                </li>
+                <li>修改资料</li>
+            </ol>
+        </nav>
+        <div class="container clear">
+            <nav class="sidebar-l">
+                <ul>
+                    <!-- 给当前页面的 a 元素添加 active 类 -->
+                    <li>
+                        <a href="#" title="我的资料" class="active">我的资料</a>
+                    </li>
+                    <li>
+                        <a href="#" title="我的好友">我的好友</a>
+                    </li>
+                    <li>
+                        <a href="#" title="我的活动">我的活动</a>
+                    </li>
+                    <li>
+                        <a href="#" title="我的相册">我的相册</a>
+                    </li>
+                    <li>
+                        <a href="#" title="我的朋友圈">我的朋友圈</a>
+                    </li>
+                    <li>
+                        <a href="#" title="我的订单">我的订单</a>
+                    </li>
+                    <li>
+                        <a href="#" title="我的钱包">我的钱包</a>
+                    </li>
+                    <li>
+                        <a href="#" title="我的评价">我的评价</a>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="sidebar-r update-info-sidebar">
+                <ul class="info-update-list">
+                    <li title="修改基本资料" class="active">基本资料</li>
+                    <li title="修改详细资料">详细资料</li>
+                    <li title="修改教育经历">教育经历</li>
+                    <li title="修改择偶标准">择偶标准</li>
+                </ul>
+                <!-- 修改基本资料 -->
+                <div class="update-base-info update-info active-update-info">
+                    <h3>
+                        <i class="iconfont-pc icon-pc-update"></i>
+                        修改基本资料
+                    </h3>
+                    <form name="updateBaseInfo" class="update-base-info-form update-info-form">
+                        <li>
+                            <em>昵称：</em>
+                            <input type="text" name="nickname" id="nickname" placeholder="请输入昵称" autofocus>
+                        </li>
+                        <li>
+                            <em>生日：</em>
+                            <div id="brithday"></div>
+                        </li>
+                        <li>
+                            <em>身高：</em>
+                            <input type="text" name="height" id="height" placeholder="请输入身高(cm)" value="160">
+                        </li>
+                        <li>
+                            <em>体重：</em>
+                            <input type="text" name="weight" id="weight" placeholder="请输入体重(kg)" value="60">
+                        </li>
+                        <li>
+                            <em>故乡：</em>
+                            <input type="text" name="homeland" id="homeland">
+                        </li>
+                        <li>
+                            <em>现居：</em>
+                            <input type="text" name="nowLivesIn" id="nowLivesIn">
+                        </li>
+                        <li>
+                            <em>婚姻：</em>
+                            <select name="marriage" id="marriage">
+                                <option value="0">单身</option>
+                                <option value="1">恋爱</option>
+                                <option value="2">已婚</option>
+                                <option value="3">离异</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>学历：</em>
+                            <select name="education" id="education">
+                                <option value="0">小学</option>
+                                <option value="1">初中</option>
+                                <option value="2">高中</option>
+                                <option value="3">大学</option>
+                            </select>
+                        </li>
+                        <button type="submit" class="submit update-info-submit">保存</button>
+                    </form>
+                </div>
+                <!-- 修改详细资料 -->
+                <div class="update-details-info update-info">
+                    <h3>
+                        <i class="iconfont-pc icon-pc-update"></i>
+                        修改详细资料
+                    </h3>
+                    <form name="updateDetailsInfo" class="update-details-info-form update-info-form">
+                        <li>
+                            <em>职业：</em>
+                            <select name="career" id="career">
+                                <option value="0">销售</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>月薪：</em>
+                            <select name="salary" id="salary">
+                                <option value="0">2K以下</option>
+                                <option value="1">2K~6k</option>
+                                <option value="1">6K~12k</option>
+                                <option value="1">12K~20k</option>
+                                <option value="1">20K以上</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>购车：</em>
+                            <select name="car" id="car">
+                                <option value="0">有</option>
+                                <option value="1">无</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>购房：</em>
+                            <select name="house" id="house">
+                                <option value="0">已购房</option>
+                                <option value="1">租房</option>
+                                <option value="2">与父母同住</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>民族：</em>
+                            <select name="people1" id="people1">
+                            </select>
+                        </li>
+                        <li>
+                            <em>红娘：</em>
+                            <select name="matchmaker" id="matchmaker">
+                                <option value="0">一单成名</option>
+                                <option value="1">一单成名2</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>单位：</em>
+                            <input type="text" name="company" id="company" placeholder="请输入单位(公司)名">
+                        </li>
+                        <li>
+                            <em>兴趣爱好：</em>
+                            <input type="checkbox" name="hobbies" value="网络">网络
+                            <input type="checkbox" name="hobbies" value="汽车">汽车
+                            <input type="checkbox" name="hobbies" value="动物">动物
+                            <input type="checkbox" name="hobbies" value="摄影">摄影
+                            <input type="checkbox" name="hobbies" value="影视">影视
+                            <input type="checkbox" name="hobbies" value="音乐">音乐
+                            <input type="checkbox" name="hobbies" value="写作">写作
+                            <input type="checkbox" name="hobbies" value="购物">购物
+                            <input type="checkbox" name="hobbies" value="旅游">旅游
+                            <input type="checkbox" name="hobbies" value="电子游戏">电子游戏
+                            <input type="checkbox" name="hobbies" value="手工艺">手工艺
+                            <input type="checkbox" name="hobbies" value="园艺">园艺
+                            <input type="checkbox" name="hobbies" value="舞蹈">舞蹈
+                            <input type="checkbox" name="hobbies" value="展览">展览
+                            <input type="checkbox" name="hobbies" value="烹饪">烹饪
+                            <input type="checkbox" name="hobbies" value="读书">读书
+                            <input type="checkbox" name="hobbies" value="绘画">绘画
+                            <input type="checkbox" name="hobbies" value="计算机">计算机
+                            <input type="checkbox" name="hobbies" value="其它">其它
+                        </li>
+                        <li>
+                            <em>主营业务：</em>
+                            <input type="text" name="mainBusiness" id="mainBusiness" placeholder="多项请使用逗号分隔">
+                        </li>
+                        <li>
+                            <em>主营介绍：</em>
+                            <textarea name="mainIntro" id="mainIntro" placeholder="请填写主营业务的介绍"></textarea>
+                        </li>
+                        <button type="submit" class="submit update-info-submit">保存</button>
+                    </form>
+                </div>
+                <!-- 修改教育经历 -->
+                <div class="update-education-info update-info">
+                    <h3>
+                        <i class="iconfont-pc icon-pc-update"></i>
+                        修改教育经历
+                    </h3>
+                    <form name="updateEducationInfo" class="update-education-info-form update-info-form">
+                        <li>
+                            <label for="primarySchool">
+                                <em>小学：</em>
+                                <input type="text" name="primarySchool" id="primarySchool" placeholder="请填写小学学校名称">   
+                            </label>
+                            <label for="primarySchoolDate">
+                                <em>入学时间：</em>
+                                <input type="text" name="primarySchoolDate" id="primarySchoolDate" class="education-input" placeholder="请输入入学年份(4位数字)">  
+                            </label>                           
+                        </li>
+                        <li>
+                            <label for="middleSchool">
+                                <em>初中：</em>
+                                <input type="text" name="middleSchool" id="middleSchool" placeholder="请填写初中学校名称">   
+                            </label>
+                            <label for="middleSchoolDate">
+                                <em>入学时间：</em>
+                                <input type="text" name="middleSchoolDate" id="middleSchoolDate" class="education-input" placeholder="请输入入学年份(4位数字)">   
+                            </label>                           
+                        </li>
+                        <li>
+                            <label for="highSchool">
+                                <em>高中：</em>
+                                <input type="text" name="highSchool" id="highSchool" placeholder="请填写高中学校名称">   
+                            </label>
+                            <label for="primarySchoolDate">
+                                <em>入学时间：</em>
+                                <input type="text" name="highSchoolDate" id="highSchoolDate" class="education-input" placeholder="请输入入学年份(4位数字)">   
+                            </label>                           
+                        </li>
+                        <li>
+                            <label for="university">
+                                <em>大学：</em>
+                                <input type="text" name="university" id="university" placeholder="请填写大学学校名称">   
+                            </label>
+                            <label for="universityDate">
+                                <em>入学时间：</em>
+                                <input type="text" name="universityDate" id="universityDate" class="education-input" placeholder="请输入入学年份(4位数字)">   
+                            </label>                           
+                        </li>
+                        <button type="submit" class="submit update-info-submit">保存</button>
+                    </form>
+                </div>
+                <!-- 修改择偶标准 -->
+                <div class="update-select-info update-info">
+                    <h3>
+                        <i class="iconfont-pc icon-pc-update"></i>
+                        修改择偶标准
+                    </h3>
+                    <form name="updateSelectInfo" class="update-select-info-form update-info-form">
+                        <li>
+                            <em>年龄：</em>
+                            <input type="text" name="ageMin" id="ageMin" placeholder="请输入最小年龄(>=18)">
+                            <span class="boundary">~</span>
+                            <input type="text" name="ageMax" id="ageMax" placeholder="请输入最大年龄(>=18)">
+                        </li>
+                        <li>
+                            <em>身高：</em>
+                            <input type="text" name="heightMin" id="heightMin" placeholder="请输入最小身高(cm)">
+                            <span class="boundary">~</span>
+                            <input type="text" name="heightMax" id="heightMax" placeholder="请输入最大身高(cm)">
+                        </li>
+                        <li>
+                            <em>民族：</em>
+                            <select name="people2" id="people2"></select>
+                        </li>
+                        <li>
+                            <em>学历：</em>
+                            <select name="education" id="education">
+                                <option value="0">小学</option>
+                                <option value="1">初中</option>
+                                <option value="2">高中</option>
+                                <option value="3">大学</option>
+                                <option value="4">研究生(硕士)</option>
+                                <option value="5">研究生(博士)</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>婚史：</em>
+                            <select name="dfws" id="dfws">
+                                <option value="0">有</option>
+                                <option value="1">无</option>
+                            </select>
+                        </li>
+                        <li>
+                            <em>现居：</em>
+                            <input type="text" name="nowLivesIn" id="nowLivesIn">
+                        </li>
+                        <button type="submit" class="submit update-info-submit">保存</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!--页尾-->
+    <div class="footer-bg">
+        <footer class="footer" role="contentinfo">
+            <div class="flink-code">
+                <div class="flink clear fl">
+                    <ul class="fast-nav fl">
+                        <h4>
+                            <a href="#" title="同乡首页">同乡首页</a>
+                        </h4>
+                        <li>
+                            <a href="#" title="婚恋">故乡</a>
+                        </li>
+                        <li>
+                            <a href="#" title="故乡">婚恋交友</a>
+                        </li>
+                        <li>
+                            <a href="#" title="婚恋交友">线下活动</a>
+                        </li>
+                        <li>
+                            <a href="#" title="线下活动">附近朋友</a>
+                        </li>
+                    </ul>
+                    <ul class="client fl">
+                        <h4>移动客户端</h4>
+                        <li>
+                            <a href="#" title="同乡Android版">同乡&nbsp;Android&nbsp;版</a>
+                        </li>
+                        <li>
+                            <a href="#" title="同乡iPhone版">同乡&nbsp;iPhone&nbsp;版</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="code-weixin fr">
+                    <h4>关注我们</h4>
+                    <div class="weixin">
+                        <div class="weixin-text-smallpic">
+                            <span class="fl">官方微信</span>
+                            <img src="../../image/pc/code-weixin2.jpg" alt="官方微信二维码" class="fl" />
+                        </div>
+                        <div class="code-weixin-bigpic">
+                            <div>扫描二维码</div>
+                            <img src="../../image/pc/code-weixin.jpg" alt="官方微信二维码" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <small>
+                蜀ICP备：13023952(1/3)号.&nbsp;文化部监督电子邮箱&nbsp;
+                <a href="mailto:wlwh@vip.sina.com" title="进入新浪微博">wlwh@vip.sina.com</a>
+                &nbsp;&nbsp;24小时免费咨询电话：4006010102
+            </small>
+        </footer>
+    </div>
+    <script src="../../jscript/jquery-1.12.3.min.js"></script>
+    <script src="../../jscript/jquery.placeholder.js"></script>
+    <script src="../../jscript/plugin-pc.js"></script>
+    <script src="../../jscript/birthday.js"></script>
+    <script>
+        $(function (){
+            var options = {
+                "dateFormat": "bigEndian",
+                "wraper": "fieldset",
+                "legend": "生日选择"
+            }
+            $("#brithday").birthdaypicker(option);
+        });
+
+        // 民族选择
+        var national = [
+                "汉族", "壮族", "满族", "回族", "苗族", "维吾尔族", "土家族", "彝族", "蒙古族", "藏族", "布依族", "侗族", "瑶族", "朝鲜族", "白族", "哈尼族",
+                "哈萨克族", "黎族", "傣族", "畲族", "傈僳族", "仡佬族", "东乡族", "高山族", "拉祜族", "水族", "佤族", "纳西族", "羌族", "土族", "仫佬族", "锡伯族",
+                "柯尔克孜族", "达斡尔族", "景颇族", "毛南族", "撒拉族", "布朗族", "塔吉克族", "阿昌族", "普米族", "鄂温克族", "怒族", "京族", "基诺族", "德昂族", "保安族",
+                "俄罗斯族", "裕固族", "乌孜别克族", "门巴族", "鄂伦春族", "独龙族", "塔塔尔族", "赫哲族", "珞巴族"
+        ];
+        var people1 = document.getElementById("people1");
+        for ( var i = 0; i < national.length; i++) {
+            var option = document.createElement ('option');
+            option.value = i;
+            var txt = document.createTextNode (national[i]);
+            option.appendChild (txt);
+            people1.appendChild (option);
+        }
+        var people2 = document.getElementById("people2");
+        for ( var i = 0; i < national.length; i++) {
+            var option = document.createElement ('option');
+            option.value = i;
+            var txt = document.createTextNode (national[i]);
+            option.appendChild (txt);
+            people2.appendChild (option);
+        }
+
+        // 切换资料修改类型
+        var $infoUpdateItem = $(".info-update-list li");
+        var $updateInfo = $(".update-info");
+        $($infoUpdateItem).click(function() {
+            var index = $(this).index();
+            $(this).addClass("active");
+            $(this).siblings("li").removeClass("active");
+            $($updateInfo[index]).addClass("active-update-info");
+            $($updateInfo[index]).siblings("div").removeClass("active-update-info");
+        });
+
+        // 对年龄、身高、体重输入是否合法进行判断
+        document.getElementById("height").onchange = function() {
+            if (isNaN(this.value)) {
+                alert("请填写数字，单位为厘米，如 160 ！");
+                return false;
+            }
+        };
+        document.getElementById("weight").onchange = function() {
+            if (isNaN(this.value)) {
+                alert("请填写数字，单位为千克，如 60 ！");
+                return false;
+            }
+        };
+        document.getElementById("primarySchoolDate").onchange = function(){ schoolDate() };
+        document.getElementById("middleSchoolDate").onchange = function(){ schoolDate() };
+        document.getElementById("highSchoolDate").onchange = function(){ schoolDate() };
+        document.getElementById("universityDate").onchange = function(){ schoolDate() };
+        function schoolDate() {
+            if (isNaN(this.value)) {
+                alert("请填写数字，如 2006 ！");
+                this.onfocus();
+                return false;
+            }
+        }
+        // 择偶标准最大和最小年龄
+        document.getElementById("ageMin").onchange = function() {
+            if (isNaN(this.value)) {
+                alert("请输入数字，如 19 ！");
+                this.onfocus();
+            }
+            else if (this.value < 18) {
+                alert("年龄不能小于 18 ！");
+                this.onfocus();
+                return false;
+            }
+        };
+        document.getElementById("ageMax").onchange = function() {
+            if (isNaN(this.value)) {
+                alert("请输入数字，如 20 ！");
+                this.onfocus();
+                return false;
+            }
+            var ageMin = document.getElementById("ageMin");
+            if (ageMin.value != "") {
+                if (this.value < ageMin.value) {
+                    alert("最大年龄不能小于最小年龄！");
+                    this.onfocus();
+                    return false;
+                }
+            }
+        };
+        // 择偶标准最小和最大身高
+        document.getElementById("heightMin").onchange = function() {
+            if (isNaN(this.value)) {
+                alert("请输入数字，如 160 ！");
+                this.onfocus();
+                return false;
+            }
+        };
+        document.getElementById("heightMax").onchange = function() {
+            if (isNaN(this.value)) {
+                alert("请输入数字，如 170 ！");
+                this.onfocus();
+                return false;
+            }
+            var heightMin = document.getElementById("heightMin");
+            if (heightMin.value != "") {
+                if (this.value < heightMin.value) {
+                    alert("最大身高不能小于最小身高！");
+                    this.onfocus();
+                    return false;
+                }
+            }
+        };
+
+    </script>
+</body>
+</html>

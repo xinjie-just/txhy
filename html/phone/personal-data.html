@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+	  <title>个人信息_同乡好运</title>
+    <meta name="keywords" content="个人信息" />
+	  <meta name="description" content="个人信息" />
+	  <meta name="author" content="lixinjie" />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="../../style/swiper-3.3.1.min.css">
+	</head>
+	<body>
+    <header role="banner" class="header">
+      <nav role="navigation" class="nav personal-data-nav">
+        <i class="iconfont icon-fanhui" title="返回"></i>
+        <h1 class="personal-data-header">张倩的详细资料</h1>
+      </nav><!-- end .nav -->
+    </header><!-- end .header -->
+    <main role="main" class="main personal-data-main">
+    	<div class="np">
+      	<img src="../../image/phone/head-portrait.jpg" alt="个人头像">
+        <span class="nickname">张倩</span>
+      </div>
+      <div class="personal-show clear" id="personal-show">
+      	<img src="../../image/phone/1.jpg" alt="个人图片展示">
+        <img src="../../image/phone/2.jpg" alt="个人图片展示">
+        <img src="../../image/phone/3.jpg" alt="个人图片展示">
+        <img src="../../image/phone/4.jpg" alt="个人图片展示">
+        <img src="../../image/phone/5.jpg" alt="个人图片展示">
+        <!-- 点击图片全屏显示，点击遮罩层大图消失，并可以滑动切换 -->
+
+      </div>
+      <div class="personal-data-list">      
+        <ul class="column-normal">
+          <li class="sex">性别：<span>女</span></li>
+          <li class="age">年龄：<span>27</span></li>
+          <li class="height">身高：<span>168cm</span></li>
+          <li class="weight">体重：<span>48kg</span></li>
+          <li class="identity">认证：<span>未绑定第三方账号</span></li>
+          <li class="album"><a href="#" title="Ta的相册">Ta的相册</a></li>
+          <li class="activity"><a href="#" title="Ta的活动">Ta的活动</a></li>
+        </ul>
+        <button type="button" class="toggle" id="toggleBtn"><span>展开更多资料</span>&nbsp;<b>&darr;</b></button>
+        <ul class="column-more" id="columnMore">
+          <li class="birthplace">原籍：<span>黑龙江哈尔滨市</span></li>
+          <li class="home-address">现居：<span>四川省成都市</span></li>
+          <li class="marriage">婚姻状态：<span>单身</span></li>
+          <li class="education"><a href="#" title="教育经历">教育经历</a></li>
+          <li class="mate-choice"><a href="#" title="择偶标准">择偶标准</a></li>
+          <li class="self-presentation"><a href="#" title="自我展示">自我展示</a></li>       
+        </ul>
+      </div>
+    </main><!-- end .main -->
+    <footer class="footer personal-data-footer" role="contentinfo">    	
+      <ul class="personal-data-flink-list">        
+        <li><a href="#" title="他的红娘">他的红娘</a></li>
+        <li><a href="#" title="全部红娘">全部红娘</a></li>
+        <li id="download">
+          <a href="javascript:void(0)" title="下载APP" class="download-app" id="downloadApp">下载APP</a>
+          <ul id="resource">
+            <li><a href="#" title="安卓版"><i class="iconfont icon-android"></i>安卓版</a></li>
+            <li><a href="#" title="苹果版"><i class="iconfont icon-iphone"></i>苹果版</a></li>
+          </ul>
+        </li>
+      </ul>
+    </footer>
+		<script src="../../jscript/jquery-1.11.3.min.js"></script>
+    <script src="../../jscript/swiper-3.3.1.min.js"></script>
+    <script src="../../jscript/plugin.js"></script>
+    <script>
+    	$(document).ready(function() {
+        if($(".personal-data-flink-list").children("li").length == 2) {
+					$(".personal-data-flink-list").children("li").css("width","50%");	
+				}
+				else if($(".personal-data-flink-list").children("li").length == 1) {
+					$(".personal-data-flink-list").children("li").css("width","100%");	
+				}
+
+        //图片展示限制个数
+        $("#personal-show").children("img").height($("#personal-show").children("img").width());
+        // 限制其图片个数，最多 9 张
+        var $imgs = $("#personal-show").find("img");
+        var imgLen = $("#personal-show").find("img").length;
+        if (imgLen > 9) {
+          for (var m = 9; m < imgLen; m++) {
+            // 每一次执行 for 循环后 img 的个数都会减少，不应该放在 for 循环里计算后再测试
+            $($imgs[m]).remove();
+          }
+        }
+
+        // 个人信息图片，点击图片全屏展示，可滑动切换 
+        $(".personal-show img").click(function() {
+          // 获取一条活动剪影列表中图片的个数
+          var img = $(this).parents(".personal-show").find("img");
+          var imgLen = img.length;
+
+          // 弹出层的宽度为浏览器可用的有效宽度，高度为浏览器的可用的有效高度 
+          var w = window.innerWidth;
+          var h = window.innerHeight;
+
+          // 获取页面当前位置离窗口顶部的距离
+          var top = document.body.scrollTop || document.documentElement.scrollTop;    
+          var $container = $('<div class="swiper-container"></div>');
+          // 设置分页器
+          var $pagination = $('<div class="swiper-pagination"></div>');          
+          var $wrapper = $('<ul class="swiper-wrapper"></ul>');
+          var item = "";
+          for (var i = 0; i < imgLen; i++) {
+            var src = $(img[i]).attr("src");
+            var alt = $(img[i]).attr("alt");
+            item += "<li class='swiper-slide'><img class='swiper-img' src=" + src + " alt=" + alt + "><strong class='tips'>再次点击大图返回</strong></li>";
+          }
+          $($wrapper).append(item);
+          $($container).prepend($wrapper);
+          $($container).append($pagination);
+          $(".personal-show").append($container);
+          var mySwiper = new Swiper (".swiper-container", {
+            direction: "horizontal",  // 水平方向滑动
+            grabCursor : true,  // 鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状
+            // loop: true,  // 为 true 时滑动到第一张和最后一张后依然可以滑动
+                  observer: true,//修改swiper自己或子元素时，自动初始化swiper
+                  observeParents: true,//修改swiper的父元素时，自动初始化swiper
+                  initialSlide: $(this).index(), // 设定初始化时slide的索引
+            // 分页器
+            pagination: ".swiper-pagination"
+          });
+
+          // 为遮罩层和遮罩层内的图片设置样式
+          $(".swiper-container").css({
+            position: "absolute",
+            top: top,
+            left: 0,
+            width: w,
+            height: h
+          });
+          $(".swiper-slide").css({
+            zIndex: 99,
+            backgroundColor: "#000"
+          });
+          $(".swiper-img").css({
+            zIndex: 100,
+            display: "block",
+            position: "absolute",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            margin: "auto",
+            maxWidth: "100%",
+            height: "auto"
+          });
+          $(".tips").css({
+            zIndex: 200,
+            display: "block",
+            position: "absolute",
+            bottom: "23px",          
+            margin: "auto",
+            width: "100%",
+            textAlign: "center",
+            paddingTop: "5px",
+            paddingBottom: "5px",
+            fontSize: "12px",
+            backgroundColor: "rgba(0, 0, 0, .5)",
+            color: "#fff"
+          });
+          // 点击遮罩层删除先前创建的节点
+          $(".swiper-container:not('.swiper-pagination')").click(function() {
+            $(this).remove();
+          });
+        });
+      });
+    </script>
+	</body>
+</html>

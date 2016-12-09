@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title>组织认证</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+		<meta name="keywords" content="组织认证资料">
+		<meta name="description" content="组织认证资料">
+		<meta name="author" content="lixinjie">
+		<style>
+			body, h1, h2, textarea { margin: 0; }
+			input, textarea, button, select, option { padding: 0; }
+			input, textarea, button, select { border: 0; }
+			body, div, h1, h2, form, label, input, select, option, button, span, textarea { -moz-box-sizing: border-box; box-sizing: border-box; }
+
+			@media (max-width: 767px) { html { font-size: 15px; } }			
+			@media (min-width: 768px) and (max-width: 991px) { html { font-size: 16px; } }
+			@media (min-width: 992px) and (max-width: 1199px) { html { font-size: 17px; } }
+			@media (min-width: 1200px) { html { font-size: 18px; } }
+
+			body { background: #fff; color: #333; font-family: "Microsoft Yahei", arial, ans-serif; }			
+			input[type="submit"], button, label { cursor: pointer; }
+			input::-moz-focus-inner { border: 0; padding: 0; }
+			label:hover { opacity: .8; }
+			input:focus, button:focus, textarea:focus { outline: none; }
+			.clearfix:before, .clearfix:after {	content: ""; display: table; }
+			.clearfix:after { clear: both; }
+			::-moz-selection, ::selection  { background-color: #fe5454; color: #fff; }
+
+			.back { cursor: pointer; }
+			
+			.producer-group-header { position: relative; height: 3rem; line-height: 3rem; margin-left: auto; margin-right: auto; background-color: #fe5454; }
+			.producer-group-header span { display: block; position: absolute; top: 0; left: 5%; padding-left: 1%; padding-right: 1%; font-size: 2rem; font-size: 600;  color: #fff; }
+			.producer-group-header h1 { width: 100%; text-align: center; font-size: 1.3rem; font-size: 600; color: #fff; }
+
+			.producer-group-bg { width: 100%; padding-bottom: 2rem; background-color: #f6f6f6; }
+			.producer-proup { position: relative; padding-top: 4rem; padding-bottom: 2rem; margin: 4rem auto 0; background-color: #fff; }
+			.producer-proup h2 { position: absolute; top: -.5rem; left: 5%; padding: .5rem 1rem; background-color: #76bd27; color: #fff; font-size: 1rem; }
+			.producer-proup form div { position: relative; float: left; width: 40%; height: 2.5rem; line-height: 2.5rem; margin: 1rem 5%; font-size: .9rem; }
+			
+			label { display: block; float: left; color: #4b4b4b; }
+			input:not([type="file"]), select, textarea, .id-photo > span { display: block; float: left; height: 2.5rem; line-height: 2.5rem; padding-left: .3rem; padding-right: .3rem; color: #b0b0b0; font-size: .9rem; border: .1rem solid #ecedef; }
+			select { padding-right: 0; }
+			select option { padding-left: .3rem; }
+			.id, .tel, .phone { position: relative; }
+			.id span, .tel span, .phone span { display: block; height: 2.5rem; line-height: 2.5rem; color: #fe5454; font-size: .7rem; }
+
+			.producer-proup form div.introduction { width: 90%; height: 7.5rem; line-height: 2.5rem; margin-left: 5%; margin-right: 5%; }			
+			.introduction textarea { min-height: 5.6rem; max-height: 7.6rem; line-height: 2rem; border-top: 1.5rem solid #f0f0ee; overflow: hidden; }
+			.id-photo > span { position: relative; display: block; border-style: none; }
+			.id-photo > span input { z-index: 2; position: absolute; top: 0; left: .3rem; height: 2.5rem; line-height: 2.5rem; width: 4rem; opacity: 0; border-style: none; font-size: .9rem; cursor: pointer; }
+			.id-photo > span span { display: block; height: 2.5rem; line-height: 2.5rem; width: 4rem; text-align: center; font-size: 1rem; border-radius: .5rem; background-color: #fe5454; color: #fff; }
+			.submit button { float: left; display: block; width: 8rem; height: 2.5rem; line-height: 2.5rem; text-align: center; font-size: .9rem; background-color: #fe5454; color: #fff; }
+
+			@media (max-width: 767px) { .producer-proup, .producer-group-header { width: 100%; } .producer-proup form > div { width: 100%; margin-left: 0; margin-right: 0; } label { position: absolute; top: 0; left: 1rem; } input:not([type="file"]), select, textarea, .id-photo > span { position: absolute; top: 0; left: 6.5rem; width: 65%; } .submit button { position: absolute; top: 0; left: 6.5rem; } .producer-proup form div.introduction { width: 100%; margin-left: 0; margin-right: 0; } .producer-proup form div.introduction textarea { min-width: 65%; max-width: 65%; } }
+
+			@media (min-width: 768px) and (max-width: 991px) { .producer-proup, .producer-group-header { width: 750px; } label { width: 30%; } input:not([type="file"]), select, textarea, .id-photo > span { width: 70%; } .introduction label { width: 10%; } .introduction textarea { min-width: 90%; max-width: 90%; } .submit { margin-left: 11%; } }
+
+			@media (min-width: 992px) and (max-width: 1199px) { .producer-proup, .producer-group-header { width: 970px; } label { width: 24%; } input:not([type="file"]), select, textarea, .id-photo > span { width: 76%; } .introduction label { width: 9%; } .introduction textarea { min-width: 91%; max-width: 91%; } .submit { margin-left: 10%; } }
+
+			@media (min-width: 1200px) { .producer-proup, .producer-group-header { width: 1170px; } label { width: 22%; } input:not([type="file"]), select, textarea, .id-photo > span { width: 78%; } .introduction label { width: 8%; } .introduction textarea { min-width: 92%; max-width: 92%; } .submit { margin-left: 9%; } }
+		</style>
+	</head>  
+  	<body>
+    	<div class="producer-group-bg">
+			<div class="producer-group-header">
+				<span class="back" id="back"><</span>
+				<h1>组织认证资料</h1>
+			</div>    
+			<div class="producer-proup">
+				<h2>填写组织认证资料</h2>
+				<form action="saveuserauthinfo" method="post" class="clearfix" onsubmit="return checkForm()" enctype="multipart/form-data">
+					<div class="current-phone">
+						<label style="width: auto;">当前用户手机号：${userBaseInfo.phone }<input type="hidden" name="userid" value="${userBaseInfo.userId }"></label>
+					</div>
+					<div class="password">
+						<label for="password">登录密码</label>
+						<input type="password" name="password" id="password" placeholder="请输入当前用户登录密码" required autofocus>
+					</div>
+					<div class="full-name">
+						<label for="fullName">组织全称</label>
+						<input type="text" id="fullName" name="organName" placeholder="请填写组织全称" required>
+					</div>
+					<div class="simply-name">
+						<label for="simplyName">组织简称</label>
+						<input type="text" id="simplyName" name="shortName" placeholder="请填写组织简称" required>
+					</div>
+					<div class="tradeid">
+						<label for="tradeid">所属行业</label>
+						<select id="tradeid" name="trade.tradeId">
+							<option value="1" selected>农林牧渔业</option>
+							<option value="2">采矿业</option>
+							<option value="3">制造业</option>
+							<option value="4">电力、热力、燃气及水生产和供应业</option>
+							<option value="5">建筑业</option>
+							<option value="6">批发和零售业</option>
+							<option value="7">交通运输、仓储和邮政业</option>
+							<option value="8">住宿和餐饮业</option>
+							<option value="9">信息传输、软件和信息技术服务业</option>
+							<option value="10">金融业</option>
+							<option value="11">房地产业</option>
+							<option value="12">租赁和商务服务业</option>
+							<option value="13">科学研究和技术服务业</option>
+							<option value="14">水利、环境和公共设施管理业</option>
+							<option value="15">居民服务、修理和其他服务业</option>
+							<option value="16">教育</option>
+							<option value="17">卫生和社会工作</option>
+							<option value="18">文化、体育和娱乐业</option>
+							<option value="19">公共管理、社会保障和社会组织</option>
+							<option value="20">国际组织</option>
+						</select>
+					</div>
+					<!-- <div class="document-type">
+						<label for="documentType">证件类型</label>
+						<select id="documentType" name="organType">
+							<option value="1" selected>营业执照</option>
+							<option value="2">组织机构代码证</option>
+						</select>
+					</div>
+					<div class="id">
+						<label for="id">证件号码</label>
+						<input type="text" id="id" name="organNo" placeholder="请填写完整的证件号码" required>
+						<span>验证成功</span>
+					</div> -->
+					<div class="contact-name">
+						<label for="contactName">联系人员</label>
+						<input type="text" id="contactName" name="linkman" placeholder="请填写联系人姓名" required>
+					</div>
+					<div class="tel">
+						<label for="tel">座机电话</label>
+						<input type="text" id="tel" name="telphone" placeholder="请填写联系人电话号码" required>
+						<span>验证成功</span>
+					</div>
+					<div class="phone">
+						<label for="phone">手机号</label>
+						<input type="text" id="phone" name="phone" placeholder="请填写联系人手机号" required>
+						<span>验证成功</span>
+					</div>				
+					<div class="id-photo">
+						<label for="idPhoto1">营业执照照片</label>
+						<span>
+							<span>上传</span>
+							<input type="file" name="pic1" id="idPhoto1" required>
+						</span>
+					</div>				
+					<div class="id-photo">
+						<label for="idPhoto2">法人身份证</label>
+						<span>
+							<span>上传</span>
+							<input type="file" name="pic2" id="idPhoto2" required>
+						</span>
+					</div>
+					<div class="introduction">
+						<label for="introduction">组织简介</label>
+						<textarea name="organIntro" id="introduction" placeholder="请填写组织介绍"></textarea>
+					</div>
+					<div class="introduction">
+						<label for="introduction">主营产品</label>
+						<textarea name="product" id="product" placeholder="请填写主营产品"></textarea>
+					</div>
+					<div class="submit">	
+						<button type="submit" id="submit">发表</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    	$(document).ready(function() {
+    		// 激活与失去焦点时 文本输入框边框改变
+    		$("#password").css("border-color", "#fe5454");
+    		$("input[type='text'], input[type='password']").focus(function() {
+    			$(this).css("border-color", "#fe5454");
+    			$(this).parent().siblings().children("input").css("border-color", "#ecedef");
+    		});
+    		$("input[type='text'], input[type='password']").blur(function() {
+    			$(this).css("border-color", "#ecedef");
+    		});
+    		// 设置文本“验证成功”的位置
+    		var screen_w = window.innerWidth;
+    		var screen_h = window.innerHeight;
+    		var tel_w = $("#tel").width();
+    		var id_w = $("#id").width();
+    		var phone_w = $("#phone").width();
+    		
+    		if (screen_w < 768) {
+    			$(".id span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(id_w + 50)
+	    		});
+	    		$(".tel span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(tel_w + 50)
+	    		});
+	    		$(".phone span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(phone_w + 50)
+	    		});
+    		}
+    		else if (screen_w >= 768 && screen_w <= 991) {
+    			$(".id span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(id_w + 46)
+	    		});
+	    		$(".tel span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(tel_w + 46)
+	    		});
+	    		$(".phone span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(phone_w + 46)
+	    		});
+    		}
+    		else if (screen_w >= 992 && screen_w <= 1200) {
+    			$(".id span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(id_w + 36)
+	    		});
+	    		$(".tel span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(tel_w + 36)
+	    		});
+	    		$(".phone span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(phone_w + 36)
+	    		});
+    		}
+    		else {
+    			$(".id span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(id_w + 38)
+	    		});
+	    		$(".tel span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(tel_w + 38)
+	    		});
+	    		$(".phone span").css({
+	    			position: "absolute",
+	    			top: 0,
+	    			left: parseFloat(phone_w + 38)
+	    		});
+    		}
+    		
+    		// 给返回按钮绑定返回事件
+    		$("#back").bind("click",function(){
+    			window.history.go(-1);
+    		});
+    	});
+		//手机号码和身份证号码验证
+		function checkForm(){ 
+			var introduction = document.getElementById("introduction").value;
+			//var tel = document.getElementById("tel").value;
+			//var id = document.getElementById("id").value;
+			//var idReg = /^[1-9][0-9]{5}(19[0-9]{2}|200[0-9]|2010)(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[0-9]{3}[0-9xX]$/;
+			//var telReg = /^1[0-9]{10}$/;
+			if (introduction == null || introduction== "") {
+				alert("组织简介必须填写！");
+				return false;
+			}
+			//if(!(idReg.test(id))){ 
+			//	alert("身份证号码有误，请重填");  
+			//	return false; 
+			//}
+			//if(!(telReg.test(tel))){ 
+			//	alert("手机号码有误，请重填");  
+			//	return false; 
+			//}  
+			return true;
+		}
+    </script>
+  </body>
+</html>

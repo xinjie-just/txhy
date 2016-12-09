@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+    <title>密码修改_同乡好运</title>
+	  <meta name="keywords" content="密码修改" />
+	  <meta name="description" content="密码修改" />
+	  <meta name="author" content="lixinjie" />	  
+    <link rel="stylesheet" href="../../style/style.css" />
+	</head>
+	<body>
+    <header role="banner" class="header">
+      <nav role="navigation" class="nav passwd-nav">
+        <i class="iconfont icon-fanhui" title="返回"></i>
+        <h1 class="register-header">密码修改</h1>
+      </nav><!-- end .nav -->
+    </header><!-- end .header -->
+    <main role="main" class="main passwd-main">
+      <form method="post" name="" action="" id="passwd-form">
+      	<div class="passwd-input phone">
+        	<label for="phoneNum">手机号码：</label>
+        	<input type="text" placeholder="请输入手机号" required id="phoneNum" onblur="checkPhone()" />
+          <a href="#" title="发送验证码" class="send-phone-code">发送验证码</a>
+        </div>
+        <div class="passwd-input phone-code">
+        	<label for="phoneCode">手机验证码：</label>
+          <input id="phoneCode" type="text" placeholder="请输入验证码" required />
+        </div>
+        <div class="passwd-input password">
+        	<label for="passWd1">设置新密码：</label>
+        	<input type="password" placeholder="请输入新密码" required id="passWd1" />     
+        </div>
+        <div class="passwd-input password">
+        	<label for="passWd2">确认新密码：</label>
+        	<input type="password" placeholder="请确认新密码" required id="passWd2" />       
+        </div>
+        <div class="btn-back clearfix">
+        	<button type="submit" class="btn-passwd fl" title="修改密码">确定</button>
+          <a href="#" title="返回登录" class="link-back fr">返回登录</a>
+        </div>
+      </form>
+    </main><!-- end .main -->
+		<script src="../../jscript/jquery-1.11.3.min.js"></script>
+    <script src="../../jscript/plugin.js"></script>
+	</body>
+</html>

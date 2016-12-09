@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+    <title>发起活动_同乡好运</title>
+	  <meta name="keywords" content="发起活动" />
+	  <meta name="description" content="发起活动" />
+	  <meta name="author" content="发起活动" />	  
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css" />
+	</head>
+	<body>
+    <header role="banner" class="header">
+      <nav role="navigation" class="nav">
+        <h1>发起活动</h1>
+      </nav><!-- end .nav -->
+    </header><!-- end .header -->
+    <main role="main" class="main activity-main">
+      <form method="post" name="" action="">
+        <div class="activity-input activity-title">
+          <label for="activityTitle">活动主题：</label>
+          <input type="text" id="activityTitle" placeholder="请输入活动主题">                      
+        </div>
+        <div class="activity-time">
+          <label for="activityTime">活动时间：</label>
+          <div class="activity-time-start-end">
+            <input type="text" id="startdate" class="startdate" placeholder="活动开始时间">
+            <input type="text" id="enddate" class="enddate" placeholder="活动结束时间">
+          </div>           
+        </div>
+        <div class="activity-input activity-place">
+          <label for="activityPlace">活动地点：</label>
+          <input type="text" id="activityPlace" placeholder="请输入活动地点">
+        </div>
+        <div class="activity-input activity-detailed-location">
+          <label for="activityDetailedLocation">详细位置：</label>
+          <input type="text" id="activityDetailedLocation" placeholder="请输入活动具体地点">
+        </div>
+        <div class="activity-input activity-cost">
+          <label for="activityCost">活动费用：</label>
+          <input type="text" id="activityCost" placeholder="请输入金额">
+        </div>
+        <div class="activity-detail">
+          <label for="activityDetail">活动详情：</label>
+          <textarea id="activityDetail" placeholder="请输入活动详情"></textarea>
+          <div class="activity-detail-btn-img">
+          	<button type="button" class="activity-detail-btn" id="activity-detail-btn" title="添加图片"><i class="iconfont icon-tianjia"></i></button>
+            <div class="activity-detail-img" id="activity-detail-img">
+            	<input type="file" id="activity-detail-img-1" />
+              <input type="file" id="activity-detail-img-2" />
+              <input type="file" id="activity-detail-img-3" />
+              <input type="file" id="activity-detail-img-4" />
+              <input type="file" id="activity-detail-img-5" />
+            </div>
+          </div>
+        </div>
+        <button type="submit" title="确认发布" class="submit-btn">确认发布该活动</button>        
+      </form>
+    </main><!-- end .main -->
+		<script src="../../jscript/jquery-1.11.3.min.js"></script>
+    <script src="../../jscript/jquery-ui.min.js"></script>
+    <script src="../../jscript/jquery-ui-timepicker-addon.js"></script>
+    <script src="../../jscript/jquery-ui-timepicker-zh-CN.js"></script>
+    <script src="../../jscript/jquery.ui.datepicker-zh-CN.js.js"></script>
+    <script src="../../jscript/plugin.js"></script>
+    <script src="../../jscript/date-time.js"></script>
+	</body>
+</html>
