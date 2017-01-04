@@ -11,7 +11,7 @@
     <script src="../../jscript/html5.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="index-body">
     <!--顶部-->
     <div class="header-bg">
         <header class="header clear" role="banner">
@@ -72,7 +72,7 @@
         <div class="clear">
             <div class="single-person">
                 <!--红娘推荐-->
-                <div class="recommend-single">
+                <div class="recommend-single" id="recommendSingle">
                     <div class="recommend-single-heading">
                         <h2>红娘推荐</h2>
                     </div>
@@ -140,7 +140,7 @@
                     </ul>
                 </div>            
                 <!--优质会员-->
-                <div class="vip">
+                <div class="vip" id="vip">
                     <div class="vip-heading clear">
                         <h2>优质会员</h2>
                         <a href="#" title="查看更多" class="more">查看更多>></a>
@@ -307,7 +307,7 @@
             </div>
             
             <!--交友资讯-->
-            <div class="dating-info">
+            <div class="dating-info" id="datingInfo">
                 <div class="dating-info-heading">
                     <h2>交友资讯</h2>
                 </div>
@@ -348,26 +348,26 @@
         </div>
         
         <!--活动专题-->
-        <div class="thematic-events">
+        <div class="thematic-events" id="thematicEvents">
             <div class="thematic-events-heading">
                 <h2>活动专题</h2>
             </div>
             <ul class="thematic-events-list clear">
                 <li class="thematic-events-item">
                     <a href="" title="">
-                        <strong class="badge">专题</strong>
+                        <strong class="badge"></strong>
                         <img src="../../image/pc/thematic.jpg" alt="活动专题">
                     </a>
                 </li>
                 <li class="thematic-events-item">
                     <a href="" title="">
-                        <strong class="badge">专题</strong>
+                        <strong class="badge"></strong>
                         <img src="../../image/pc/thematic.jpg" alt="活动专题">
                     </a>
                 </li>
                 <li class="thematic-events-item">
                     <a href="" title="">
-                        <strong class="badge">专题</strong>
+                        <strong class="badge"></strong>
                         <img src="../../image/pc/thematic.jpg" alt="活动专题">
                     </a>
                 </li>
@@ -376,7 +376,7 @@
 
         <div class="special-events-and-hot-place clear">
             <!--精选活动-->
-            <div class="special-events">
+            <div class="special-events" id="specialEvents">
                 <div class="special-events-heading">
                     <h2>精选活动</h2>
                     <a href="#" title="查看更多" class="more">查看更多>></a>
@@ -599,9 +599,32 @@
             </div>
         </div>
 
+        <!--快捷锚链接导航-->
+        <div class="shortcut-anchor">
+            <img src="../../image/pc/open-and-close.png" alt="展开/收起" title="收起详情" class="shortcut-anchor-icon">
+            <div class="shortcut-anchor-nav">
+                <ul class="shortcut-anchor-list">
+                    <li class="shortcut-anchor-item">
+                        <a href="#recommendSingle" title="红娘推荐">红娘推荐</a>
+                    </li>
+                    <li class="shortcut-anchor-item">
+                        <a href="#vip" title="优质会员">优质会员</a>
+                    </li>
+                    <li class="shortcut-anchor-item">
+                        <a href="#thematicEvents" title="活动专题">活动专题</a>
+                    </li>
+                    <li class="shortcut-anchor-item">
+                        <a href="#specialEvents" title="精选活动">精选活动</a>
+                    </li>
+                    <li class="shortcut-anchor-item">
+                        <a href="javascript:void(0)" title="返回顶部" id="top">返回顶部</a>
+                    </li>
+                </ul>
+            </div>            
+        </div>
     </main>
     <!--页尾-->
-    <div class="footer-bg">
+    <div class="footer-bg index-footer-bg">
         <footer class="footer" role="contentinfo">
             <div class="flink-code">
                 <div class="flink clear fl">
@@ -655,6 +678,29 @@
     </div>
     <script src="../../jscript/jquery-1.12.3.min.js"></script>
     <script src="../../jscript/jquery.placeholder.js"></script>
+    <script src="../../jscript/jquery.pin.min.js"></script>
     <script src="../../jscript/plugin-pc.js"></script>
+    <!-- <script>
+        $(".shortcut-anchor-nav").pin();
+    </script> -->
+    <script>
+        $("#top").click(function(event){ 
+            $('html,body').animate({scrollTop:0}, 100);
+            return false;  // 终结该函数，回到顶部后，不在执行该函数
+        });
+        // 快捷锚链接导航的展开与收起
+        $(".shortcut-anchor-icon").click(function() {
+            if ($(".shortcut-anchor-nav").css("display") == "none") {
+                $(".shortcut-anchor-nav").show();
+                $(this).css("transform", "rotate(45deg)");
+                $(this).attr("title", "收起详情");
+            }else{
+                $(".shortcut-anchor-nav").hide();
+                $(this).css("transform", "rotate(90deg)");
+                $(this).attr("title", "展开详情");
+            }
+                
+        });
+    </script>
 </body>
 </html>

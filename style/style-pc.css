@@ -159,7 +159,11 @@ figure.logo > a > img {
 .icon-pc-update:before { content: "\e681"; }
 .icon-pc-female:before { content: "\e615"; }
 .icon-pc-male:before { content: "\e616"; }
+.icon-pc-open-and-close:before { content: "\e617"; }
 /*顶部*/
+.index-body{
+	background-color: #f8f4f2;
+}
 .header-bg {
 	width: 100%;
 	height: 70px;
@@ -274,6 +278,7 @@ main {
 .home-main {
 	margin: 30px auto 0;
 	width: 1200px;
+	position: relative; /*为右侧快捷锚导航定位*/
 }
 
 
@@ -284,18 +289,19 @@ main {
 }
 /*红娘推荐*/
 .recommend-single-heading {
-	height: 30px;
-	line-height: 24px;
+	height: 31px;
+	line-height: 20px;
 	border-bottom: 1px solid #e7e5e7;
 }
 .recommend-single-heading h2 {
 	float: left;
 	font-size: 20px;
-	color: #fe5454;
+	font-family: "黑体";
+	color: #fe6d81;
 	padding-left: 10px;
-	height: 24px;
-	line-height: 24px;
-	border-left: 4px solid #fe5454;
+	height: 20px;
+	line-height: 20px;
+	border-left: 4px solid #fe6d81;
 }
 .recommend-single-list {
 	margin-top: 15px;
@@ -308,6 +314,11 @@ main {
 	border: 1px solid #dfdcdf;
 	margin-right: 20px;
 	padding: 12px 12px 0;
+	transition: all .4s ease 0s;
+}
+.recommend-single-item:hover {
+	z-index: 3;
+	box-shadow: 0 0 10px #838383;
 }
 .recommend-single-item:last-child {
 	margin-right: 0;
@@ -341,7 +352,7 @@ main {
 .nickname-and-sex .nickname {
 	display: block;
 	width: 100%;
-	padding-right: 30px;
+	padding-right: 40px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -372,7 +383,7 @@ main {
 }
 .address-and-age .address{
 	width: 100%;
-	padding-right: 100px;
+	padding-right: 50px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -381,7 +392,7 @@ main {
 .address-and-age .age {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 10px;
 }
 .remark {
 	margin: 20px -12px 0;
@@ -427,24 +438,25 @@ main {
 	margin-top: 30px;
 }
 .vip-heading {
-	height: 30px;
-	line-height: 24px;
+	height: 31px;
+	line-height: 20px;
 	border-bottom: 1px solid #e7e5e7;
 }
 .vip-heading h2 {
 	float: left;
 	font-size: 20px;
-	color: #fe5454;
+	font-family: "黑体";
+	color: #fe6d81;
 	padding-left: 10px;
-	height: 24px;
-	line-height: 24px;
-	border-left: 4px solid #fe5454;
+	height: 20px;
+	line-height: 20px;
+	border-left: 4px solid #fe6d81;
 }
 .vip-heading a {
 	display: block;
 	float: right;
-	height: 24px;
-	line-height: 24px;
+	height: 20px;
+	line-height: 20px;
 	padding-right: 10px;
 	padding-left: 10px;
 }
@@ -536,18 +548,19 @@ main {
 	float: right;
 }
 .dating-info-heading {
-	height: 30px;
-	line-height: 24px;
+	height: 31px;
+	line-height: 20px;
 	border-bottom: 1px solid #e7e5e7;
 }
 .dating-info-heading h2 {
 	float: left;
 	font-size: 20px;
-	color: #fe5454;
+	font-family: "黑体";
+	color: #fe6d81;
 	padding-left: 10px;
-	height: 24px;
-	line-height: 24px;
-	border-left: 4px solid #fe5454;
+	height: 20px;
+	line-height: 20px;
+	border-left: 4px solid #fe6d81;
 }
 .dating-info-list {
 	margin-top: 15px;
@@ -566,8 +579,12 @@ main {
 }
 .dating-info-item img {
 	display: block;
-	width: 264px;
+	width: 262px;
 	height: 150px;
+	transition: all .4s ease 0s;
+}
+.dating-info-item img:hover {
+	opacity: 0.8;
 }
 .dating-info-item h3 {
 	display: block;
@@ -575,8 +592,7 @@ main {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 5px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -591,17 +607,18 @@ main {
 	margin-top: 30px;
 }
 .thematic-events-heading {
-	height: 32px;
-	line-height: 24px;
+	height: 31px;
+	line-height: 20px;
 	border-bottom: 1px solid #e7e5e7;
 }
 .thematic-events-heading h2 {
 	float: left;
 	font-size: 20px;
+	font-family: "黑体";
 	color: #70a445;
 	padding-left: 10px;
-	height: 24px;
-	line-height: 24px;
+	height: 20px;
+	line-height: 20px;
 	border-left: 4px solid #70a445;
 }
 .thematic-events-list {
@@ -617,6 +634,11 @@ main {
 }
 .thematic-events-item a {
 	display: block;
+	transition: all .4s ease 0s;
+}
+.thematic-events-item a:hover {
+	z-index: 3;
+	box-shadow: 0 0 10px #838383;
 }
 .thematic-events-item strong {
 	z-index: 3;
@@ -625,13 +647,8 @@ main {
 	left: 10px;
 	top: 10px;
 	width: 23px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	line-height: 1.3;
-	background-color: #ff637e;
-	text-align: center;
-	font-size: 16px;
-	color: #fff;
+	height: 54px;
+	background: url("../image/pc/thematic.png") no-repeat;
 }
 .thematic-events-item:last-child {
 	margin-right: 0;
@@ -652,17 +669,18 @@ main {
 	width: 820px;
 }
 .special-events-heading {
-	height: 32px;
-	line-height: 24px;
+	height: 31px;
+	line-height: 20px;
 	border-bottom: 1px solid #e7e5e7;
 }
 .special-events-heading h2 {
 	float: left;
 	font-size: 20px;
+	font-family: "黑体";
 	color: #0099e9;
 	padding-left: 10px;
-	height: 24px;
-	line-height: 24px;
+	height: 20px;
+	line-height: 20px;
 	border-left: 4px solid #0099e9;
 }
 .special-events-heading a {
@@ -806,14 +824,15 @@ main {
 	width: 300px;
 }
 .hot-place-heading {
-	height: 32px;
-	line-height: 24px;
+	height: 31px;
+	line-height: 20px;
 	border-bottom: 1px solid #e7e5e7;
 }
 .hot-place-heading h2 {
 	font-size: 20px;
-	height: 24px;
-	line-height: 24px;
+	font-family: "黑体";
+	height: 20px;
+	line-height: 20px;
 	color: #a17453;
 	padding-left: 10px;
 	border-left: 4px solid #a17453;
@@ -836,6 +855,7 @@ main {
 	border-color: #aaa;
 	margin-left: auto;
 	margin-right: auto;
+	transition: all .4s ease 0s;
 }
 .hot-place-item:hover img{ opacity: .8; }
 .hot-place-item h3 {
@@ -906,12 +926,55 @@ main {
 	margin-top: 8px;
 	color: #666;
 } */
+/*快捷锚链接导航*/
+.shortcut-anchor {
+	position: fixed;
+	top: 70px;
+	right: 0;
+	z-index: 199;	
+}
+.shortcut-anchor-icon {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	cursor: pointer;
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+}
+.shortcut-anchor-nav {
+	width: 175px;
+	height: 556px;
+	background: url("../image/pc/rightside-anchor-bg.png") no-repeat;
+	padding: 210px 10px 0;
+}
+.shortcut-anchor-item {
+	text-align: center;
+}
+.shortcut-anchor-item a {
+	display: inline-block;
+	height: 29px;
+	line-height: 25px;
+	border-bottom: 1px dashed #d6b5b9;
+	padding-right: 15px;
+	padding-left: 15px;
+	text-align: center;
+	font-size: 14px;
+	color: #96021e;
+}
+.shortcut-anchor-item a:hover {
+	color: #b49397;
+}
 /*页尾*/
 .footer-bg {
 	margin-top: 60px;
 	width: 100%;
 	min-width: 1200px;
 	background-color: #f8f4f2;
+}
+.footer-bg.index-footer-bg {
+	background-color: #fff;
 }
 .footer {
 	width: 1200px;
