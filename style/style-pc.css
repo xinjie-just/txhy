@@ -335,10 +335,11 @@ main {
 	height: 72px;
 	background: url("../image/pc/recommend-bg.png") no-repeat left top;
 }
-.recommend-single-item img {
+.recommend-single-img {
 	display: block;
 	width: 261px;
 	height: 128px;
+	overflow: hidden;
 }
 .nickname-and-sex {
 	position: relative;
